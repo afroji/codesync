@@ -14,7 +14,7 @@ const confirmBtn = document.getElementById('confirmBtn');
 // Host session
 hostBtn.addEventListener('click', async () => {
     try {
-        const response = await fetch('http://localhost:3000/api/generate-room');
+        const response = await fetch('http://codesync-production-0694.up.railway.app/api/generate-room');
         const data = await response.json();
         currentRoomId = data.roomId;
         currentAction = 'host';
