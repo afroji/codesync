@@ -1,0 +1,26 @@
+{
+  "name": "realtime-code-editor",
+  "version": "1.0.0",
+  "description": "Real-time collaborative code editor with multi-language support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "mkdir -p dist && cp public/index.html public/editor.html dist/ && cp js/app.js js/editor-monaco.js dist/ && cp -r css dist/"
+  },
+  "keywords": [
+    "collaborative",
+    "code-editor",
+    "realtime",
+    "websocket"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.0"
+  }
+}
