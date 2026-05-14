@@ -377,7 +377,8 @@ function openChat() {
 function sendChatMessage() {
     const message = chatInput.value.trim();
     if (!message) return;
-    const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    // With this
+const timestamp = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
     appendChatMessage(userName, message, timestamp, true);
     if (socket) {
         socket.emit('chat-message', { roomId, userName, message, timestamp });
