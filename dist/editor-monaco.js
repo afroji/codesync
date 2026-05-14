@@ -60,7 +60,7 @@ function init() {
     initMonacoEditor();
 
     setTimeout(() => {
-        socket = io('http://localhost:3000');
+        socket = io();
         socket.emit('join-room', { roomId, userName });
         setupSocketListeners();
         setupUIListeners();
@@ -304,7 +304,7 @@ async function runCode() {
     outputContent.innerHTML = '<div class="output-placeholder">Executing your code...</div>';
 
     try {
-        const response = await fetch('http://localhost:3000/api/execute', {
+        const response = await fetch('/api/execute', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ code, language: currentLanguage, stdin })
